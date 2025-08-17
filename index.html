@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TruthLens — by Tanmay & Chatuu AI</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Meta -->
+  <meta name="description" content="TruthLens — Detect AI images & videos. Prototype by Tanmay & Chatuu AI." />
+</head>
+<body>
+  <div id="app" class="app-root">
+    <!-- Pages will be toggled by JS -->
+    <main id="page-cover" class="page cover">
+      <h1 class="title">✨ TruthLens ✨</h1>
+      <p class="subtitle">Presenting TruthLens — An AI Policeman</p>
+      <p class="tag">LETS BE THE DETECTIVES 🔍</p>
+      <button id="btn-enter" class="btn primary large">ENTER YOUR PROTOTYPE</button>
+    </main>
+
+    <section id="page-purpose" class="page hidden">
+      <header class="small-header">by <b>Tanmay</b> & <b>Chatuu AI</b></header>
+      <h2>Our Purpose</h2>
+      <p>To protect people from fake rumours and manipulated images/videos. TruthLens helps you check authenticity using a 3-step AI process (Basic → Deep → Cross-check).</p>
+      <div class="row">
+        <button id="btn-purpose-continue" class="btn primary">Continue</button>
+        <button id="btn-purpose-back" class="btn ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="page-choose" class="page hidden">
+      <h2>Photo or Video?</h2>
+      <p class="muted">Pick what you want to analyze. For videos, upload clips ≤10 seconds.</p>
+      <div class="grid-2">
+        <div class="card choice" id="choose-photo">📷 Photo</div>
+        <div class="card choice" id="choose-video">🎥 Video (≤10s)</div>
+      </div>
+      <div class="row">
+        <button id="btn-choose-back" class="btn ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="page-photo-upload" class="page hidden">
+      <h2>Upload Photo</h2>
+      <p class="muted">Privacy-friendly: analysis runs in your browser.</p>
+      <input id="input-photo" type="file" accept="image/*" />
+      <div class="row">
+        <button id="btn-photo-back" class="btn ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="page-video-upload" class="page hidden">
+      <h2>Upload Video (≤10s)</h2>
+      <p class="muted">For best performance, upload short clips.</p>
+      <input id="input-video" type="file" accept="video/*" />
+      <div class="row">
+        <button id="btn-video-back" class="btn ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="page-analyzing" class="page hidden">
+      <h2>Detective mode ON…</h2>
+      <p class="muted">Our AI is scanning every single pixel 🧬</p>
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+      <p id="phase-text" class="muted small">Checking shadows… reflections… textures… metadata…</p>
+
+      <div id="poll-block" class="interactive-block"></div>
+      <div id="quiz-block" class="interactive-block"></div>
+
+      <div class="magnifier-row">
+        <div class="magnifier"></div>
+        <div class="detective-info">
+          <div class="bold">Detective Board</div>
+          <div class="muted small">We pin clues and stitch threads — like a real detective investigation.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="btn-skip-analysis" class="btn ghost">Skip to analysis</button>
+      </div>
+    </section>
+
+    <section id="page-analysis" class="page hidden">
+      <h2>Analysis Summary</h2>
+      <div id="analysis-card" class="card-card"></div>
+      <div class="row">
+        <button id="btn-analysis-back" class="btn ghost">Back</button>
+        <button id="btn-analysis-result" class="btn primary">View Result</button>
+      </div>
+    </section>
+
+    <section id="page-result" class="page hidden">
+      <div class="case-file">
+        <div class="case-header">
+          <div>
+            <h3>CASE FILE REPORT</h3>
+            <div class="muted small">TruthLens Analysis</div>
+          </div>
+          <div id="verdict-stamp" class="stamp"></div>
+        </div>
+
+        <hr />
+        <div class="case-body">
+          <p><strong>Summary:</strong> <span id="result-summary"></span></p>
+          <p><strong>Confidence:</strong> <span id="result-confidence"></span></p>
+
+          <div class="clues" id="result-clues"></div>
+        </div>
+
+        <div class="row">
+          <button id="btn-result-another" class="btn ghost">Analyze another</button>
+          <button id="btn-result-home" class="btn yellow">Home</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
